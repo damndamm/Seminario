@@ -1,0 +1,115 @@
+%se debe compilar 2 veces para ver los cambios en el indice y otros sitios.
+
+%tamaño de letra 12, tamaño carta, margen de un solo lado (sin oneside queda bonito pero no creo que les guste)
+\documentclass[12pt,oneside, letterpaper]{book}
+
+%documento en español<
+\usepackage[spanish]{babel}
+
+%para los acentos directos, se pueden usar así o as\'i
+\usepackage[utf8]{inputenc}
+
+%para agregar las imagenes
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%Titulo del trabajo
+\title{Lineamientos para Soluciones de Alta Disponibilidad en VoIP}
+
+%autores
+\author{Br. Sebastian Suarez \and
+		Br.Dorjes Molina}
+	
+%fecha de entrega	(ojalá)
+\date{Diciembre 2016}
+
+\begin{document}
+	
+	%sin numero de pagina
+	\pagenumbering{gobble}
+	
+	%página de titulo
+	\maketitle
+	\newpage
+	
+
+
+	%números de pagina en romano
+	\pagenumbering{roman}
+	\newpage
+	
+	%indice
+	\addtocontents{toc}{~\hfill\textbf{P\'agina}\par}
+	\setcounter{tocdepth}{5}
+	\tableofcontents
+	
+	\newpage
+	
+	%indice de figuras y tablas
+	\listoffigures
+	
+	\newpage
+	\listoftables
+	
+	%glosario de terminos (ubicar y llenar)
+	\chapter*{Glosario de terminos}
+
+	\newpage
+	
+	%números de pagina en números normales
+	\pagenumbering{arabic}
+
+	%primera parte
+%	\part{Marco Teórico}
+%	\section{Introducci\'on}
+%	\section{Telefon\'ia Tradicional}
+%	\section{Modelo de capas}
+%	\subsection{OSI}
+%	\subsection{TCP/IP}
+	\chapter{Voz sobre Protocolo de Internet}
+	\include{voip}
+	\include{antecedentes}
+	\include{caracteristicas}
+	\include{voipvstrad}
+	\include{codvoz}
+
+
+	%segunda parte
+%	\part{Planteamiento del Problema}
+%	\part{Propuesta de trabajo}
+
+%bibliografia, el número indica la cantidad de entradas que tendrá, no puede ser mayor a 99
+	\begin{thebibliography}{15}
+		\bibitem{switching} 
+		T. Eallingford, Switching to VoIP, Beijing: O'Reilly, 2005. .
+		
+		\bibitem{voiptoip} 
+		R. Quispe y G. Suárez.	
+		\textit{ Voz sobre IP y Telefonía sobre IP}.
+		
+		\bibitem{nyquist} 
+		H. Nyquist, Certain topics in telegraph transmission theory, de Trans. AIEE, Volumen 47, 1928.
+		
+		\bibitem{packet}
+		B. Hartpence, Packet Guide to Voice over IP, Gravenstein, Sebastopol: O'Reilly Media, Inc, 2013. 
+		
+		\bibitem{understanding}
+		N. Wittenberg, Undertanding Voice over IP Technology, Clifon Park, NY: Delmar Cengage Learning, 2009.
+		
+		\bibitem{rtp}
+		C. Perkings, RTP: Audio and Video for the Internet, Boston: Addison-Wesley, 2003.
+		
+		\bibitem{undersip}
+		A. Jhonston, SIP: Understanding the Session Initiation Protocol, Norwood, Massachusetts: Artech House, 2009.
+		
+		\bibitem{rfcsip}
+		J. Rosenberg, H. Schulzrinne, G. Camarillo, A. Johnston, J. Peterson, R. Sparks, M. Handley y E. Schooler, RFC 3261 SIP: Session Initiation Protocol, 2002. 
+		
+		\bibitem{siphandbook}
+		S. Ilvas y M. Ahson, SIP Handbook, Boca Raton, Florida: CRC Press, 2009.
+		
+		\bibitem{codif}
+		J. Joskowicz, Codificación de Voz y Video, Montevideo, Uruguay: Universidad de la Republica, 2015.
+		
+	\end{thebibliography}
+\end{document}
