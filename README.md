@@ -7,8 +7,8 @@ Solo contiene la cabecera del documento, aquí se incluyen las secciones interna
 \include{nombre-seccion}
 ```
 
-##nombre-seccion
+##nombre-seccion.tex
 Incluye el contenido de la seccion, texto, imagenes, tablas y otros.
 
-##cabecera
+##header.tex
 Incluye solo una cabecera general, para editar las secciones por separado sin modificar el documento principal.
