@@ -1,6 +1,71 @@
 	
 \section{Codificación de Voz}
 
+Las redes de datos transfieren la información de modo digital 
+y en VoIP la información que se maneja son señales de audio, 
+principalmente señales de voz. Estas señales son analógicas 
+por naturaleza, así que se requiere de un mecanismo que 
+digitalice las señales analógicas, es decir convierta las 
+señales de voz en una secuencia de números discreta, para 
+luego poder ser enviadas por la red. Sí la solución VoIP 
+implementada es completamente digital, este proceso ocurre 
+directamente en el teléfono (teléfonos digitales, celulares, 
+micrófonos de computadores); en cambio si el sistema incluye 
+secciones combinadas con telefonía tradicional, el proceso de 
+digitalización ocurre en las intersecciones de los sistemas 
+bien sea en las pasarelas (gateways) del sistema o en conectores 
+ATA (Analog Telephone Adapter) como se aprecia en las siguientes 
+figuras [FIGURA \ref{fig:pasarela}]  [FIGURA \ref{fig:ata}].
+
+	\begin{figure}[h]
+		
+		%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+		\includegraphics[width=\textwidth]{pasarela}
+		
+		%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+		\caption{VoIP combinada con telefonía tradicional a través de una pasarela}
+		
+		%centrado, por si las moscas
+		\centering
+		
+		%para referencias
+		\label{fig:pasarela}
+	\end{figure}
+
+Los primeros trabajos sobre digitalización de audio fueron realizados 
+por el Ingeniero Alec Reeves poco antes de la segunda guerra mundial, quien desarrolló un sistema de audio digital con fines militares, 
+sin embargo, la tecnología de comunicaciones de la época todavía 
+no estaba lista para dicho avance. Alec Reeves patento un total 
+de 82\footnote{ http://www.quantium.plus.com/ahr/patents.htm } 
+inventos entre ellos se destaca la idea de la Modulación por 
+impulsos codificados (PCM, Pulse Coded Modulation). Para la 
+década de los 60 fue que se popularizo la tecnología de PCM 
+pero para entonces ya no eran reclamables los derechos de la 
+patente. 
+
+	
+		\begin{figure}[h]
+			
+			%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+			\includegraphics[width=\textwidth]{ata}
+			
+			%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+			\caption{VoIP usando teléfonos analógicos y ATAs}
+			
+			%centrado, por si las moscas
+			\centering
+			
+			%para referencias
+			\label{fig:ata}
+		\end{figure}
+		
+		
+Inicialmente la digitalización de voz se basó en codificar la forma 
+de onda de la señal analógica mediante un proceso de muestreo, 
+cuantificación y codificación de la señal, el proceso de PCM. Luego, con el objetivo de reducir la tasa de bits requeridas para transmitir la señal, se comenzaron codificar solo la diferencia entre los valores de las muestras reales y la predicción de la señal en base a la extrapolación de las muestras anteriores. 
+
+\subsection{Codecs}
+
 \subsection{Codificación de Video}
 
 	
