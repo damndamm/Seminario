@@ -38,8 +38,8 @@ sin embargo, la tecnología de comunicaciones de la época todavía
 no estaba lista para dicho avance. Alec Reeves patento un total 
 de 82\footnote{ http://www.quantium.plus.com/ahr/patents.htm } 
 inventos entre ellos se destaca la idea de la Modulación por 
-impulsos codificados (PCM, Pulse Coded Modulation). Para la 
-década de los 60 fue que se popularizo la tecnología de PCM 
+impulsos codificados (PCM, Pulse Coded Modulation). Al rededor 
+de los 60s fue que se popularizo la tecnología de PCM 
 pero para entonces ya no eran reclamables los derechos de la 
 patente. 
 
@@ -62,9 +62,20 @@ patente.
 		
 Inicialmente la digitalización de voz se basó en codificar la forma 
 de onda de la señal analógica mediante un proceso de muestreo, 
-cuantificación y codificación de la señal, el proceso de PCM. Luego, con el objetivo de reducir la tasa de bits requeridas para transmitir la señal, se comenzaron codificar solo la diferencia entre los valores de las muestras reales y la predicción de la señal en base a la extrapolación de las muestras anteriores. 
+cuantificación y codificación de la señal, el proceso de PCM. Luego, con el objetivo de reducir la tasa de bits requeridas para transmitir la señal, se introdujeron las técnicas predictivas y comenzaron codificar solo la diferencia entre los valores de las muestras reales y la predicción de la señal en base a la extrapolación de las muestras anteriores. 
 
-\subsection{Codecs}
+\subsection{Códecs}
+
+Los códecs son algoritmos o dispositivos que realizan la codificación y 
+decodificación de la señal de audio, son usados a menudo en videoconferencias y emisiones de medios de comunicación. La 
+mayoría de los códecs provoca perdidas de información ya que 
+están diseñados para minimizar el tamaño de los datos digitales. 
+Existen códecs sin pérdida (lossless) que mantienen la calidad 
+más precisa del sonido pero generan datos digitales muy grandes 
+que en VoIP no son necesarios. 
+
+Existe gran variedad de códecs en el mercado actual y su clasificación puede depender de varios aspectos como la técnica que usan para codificar, el ancho de banda que se muestrea o incluso la tasa de bits resultante. En la [FIGURA \ref{fig:tablacodecs}] se puede apreciar las principales diferencias entre los codecs más comunes.
+
 
 \subsection{Codificación de Video}
 
