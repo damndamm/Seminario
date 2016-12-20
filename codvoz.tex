@@ -43,7 +43,73 @@ Inicialmente la digitalización de voz se basó en codificar la forma de onda de
 
 \subsection{Proceso de digitalización}
 
+Las señales analógicas pasan por un proceso de conversión de tres etapas antes de convertirse en señales digitales. Aunque las especificaciones técnicas de cada etapa dependen directamente del códec utilizado, el proceso general es similar y se ilustra en la siguiente [FIGURA \ref{fig:procesoDigitalizacion}]
 
+	\begin{figure}[h]
+	
+		%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+		\includegraphics[width=\textwidth]{procesoDigitalizacion}
+		
+		%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+		\caption{Proceso general de digitalización.}
+		
+		%centrado, por si las moscas
+		\centering
+		
+		%para referencias
+		\label{fig:procesoDigitalizacion}
+	\end{figure}
+
+\subsubsection{Muestreo}
+El proceso de muestreo consiste en tomar muestras de la señal de audio en intervalos regulares de tiempo. Para que en este proceso de digitalización no exista pérdida de información, se debe tomar muestras de la señal a una velocidad (frecuencia de muestreo) que sea, como mínimo, el doble \cite{nyquist} de la frecuencia más alta presente en la señal que se convierte. Cada códec tiene una frecuencia de muestreo definida en su estándar, y depende del tipo de banda (angosta, amplia, super-amplia o completa) que utilice el códec. En la siguiente [Figura \ref{fig:muestreo}] se ilustra el resultado de esta etapa.
+
+	\begin{figure}[h]
+		%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+		\includegraphics[width=\textwidth]{muestreo}
+		
+		%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+		\caption{Resultado del muestreo de una señal analógica.}
+		
+		%centrado, por si las moscas
+		\centering
+		
+		%para referencias
+		\label{fig:muestreo}
+	\end{figure}
+
+\subsubsection{Cuantificación}
+El proceso de cuantificación convierte las muestras obtenidas en la etapa anterior en valores discretos, los cuales se pueden “medir” según una escala determinada por cada códec. Cuantos más valores discretos se utilicen, menor será la distorsión o ruido introducido por el proceso de digitalización, pero se necesitará mayor cantidad de bits para poder procesar o transmitir la información. En la siguiente [Figura \ref{fig:cuantificacion}] se ilustra el resultado de esta etapa.
+
+	\begin{figure}[h]
+		%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+		\includegraphics[width=\textwidth]{cuantificacion}
+		
+		%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+		\caption{Resultado de la cuantificación de una señal muestreada.}
+		
+		%centrado, por si las moscas
+		\centering
+		
+		%para referencias
+		\label{fig:cuantificacion}
+	\end{figure}
+
+\subsubsection{Codificación}
+Una vez que las muestras tienen un valor discreto asignado, estos deben ser traducidos a un formato que sea manejable digitalmente como es el caso de valores binarios. En la siguiente [Figura \ref{fig:codificacion}] se ilustra el resultado de esta etapa. 
+
+	\begin{figure}[h]
+		%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+		\includegraphics[width=\textwidth]{codificacion}
+		
+		%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+		\caption{Resultado de la codificación de muestras cuantificadas.}
+		
+		%centrado, por si las moscas
+		\centering
+		
+		%para referencias
+		\label{fig:codificacion}
+	\end{figure}
 
 \subsection{Códec}
 
@@ -65,13 +131,36 @@ Los códec son algoritmos o dispositivos que realizan la codificación y decodif
 		\end{table}
 
 
-Existe gran variedad de códecs en el mercado actual y su clasificación puede depender de varios aspectos como la técnica que usan para codificar, el ancho de banda que se muestra o incluso la tasa de bits resultante. En las siguientes tablas se puede apreciar las principales diferencias entre los códec más comunes. En la primera [\ref{tab:narrow}] se pueden apreciar los principales códec de banda angosta, diseñados para digitalizar audio en frecuencias entre 300Hz y 3,4kHz. En la segunda [] se comparan los códec de banda amplia que reproducen señales entre 50Hz y 7kHz. En la tercera [] se encuentran los códec de banda super amplia (frecuencias de 50Hz a 14kHz) y banda completa (frecuencias de 50 Hz a 20 kHz).
+Existe gran variedad de códecs en el mercado actual y su clasificación puede depender de varios aspectos como la técnica que usan para codificar, el ancho de banda que se muestra o incluso la tasa de bits resultante. En las siguientes tablas se puede apreciar las principales diferencias entre los códec más comunes. En la primera [\ref{tab:narrow}] se pueden apreciar los principales códec de banda angosta, diseñados para digitalizar audio en frecuencias entre 300Hz y 3,4kHz. En la segunda [\ref{tab:wide}] se comparan los códec de banda ancha que reproducen señales entre 50Hz y 7kHz. En la tercera [\ref{tab:full}] se encuentran los códec de banda super amplia (frecuencias de 50Hz a 14kHz) y banda completa (frecuencias de 50 Hz a 20 kHz).
 
-AQUI VA LA TABLA DE wideBAND
-
-AQUI VA LA TABLA DE superwideBANDy fullband
-
-
-\section{Codificación de Video}
-
+	\begin{table}[h]
 	
+		%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+		\includegraphics[width=\textwidth]{../tables/codecswideband}
+		
+		%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+		\caption{Códec de banda ancha (Wideband).}
+		
+		%centrado, por si las moscas
+		\centering
+		
+		%para referencias
+		\label{tab:wide}
+	\end{table}
+
+	\begin{table}[h]
+	
+		%nombre de la imagen, sin extencion. "width=\textwidth" ancho igual al texto
+		\includegraphics[width=\textwidth]{../tables/codecfullband}
+		
+		%titulo de la imagen, salen debajo de la imagen y en el indice de imagenes.
+		\caption{Códec de banda superancha (Superwideband ) y Completa (Fullband).}
+		
+		%centrado, por si las moscas
+		\centering
+		
+		%para referencias
+		\label{tab:full}
+	\end{table}
+	
+\input{codecs}
